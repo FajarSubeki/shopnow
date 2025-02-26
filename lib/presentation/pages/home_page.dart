@@ -3,6 +3,7 @@ import 'package:shopnow/data/datasource/dummy_data.dart';
 import 'package:shopnow/presentation/components/gradient_text_field.dart';
 import 'package:shopnow/presentation/components/image_slider.dart';
 import 'package:shopnow/presentation/components/product_item.dart';
+import 'package:shopnow/presentation/components/user_item.dart';
 import 'package:shopnow/resources/app_asset.dart';
 import 'package:shopnow/resources/app_color.dart';
 import 'package:shopnow/resources/app_string.dart';
@@ -30,7 +31,8 @@ class _HomePageState extends State<HomePage> {
             children: [
               gradientTextField(),
               bannerSlider(),
-              topProduct(), // Ensure this is properly constrained
+              topProduct(),
+              topUser(),
             ],
           ),
         ),
@@ -107,6 +109,77 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget titleUser() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          /// Left Labels
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+              children: [
+                Text(
+                    AppString.topUserTitle,
+                    style: textStyle.copyWith(
+                        color: AppColor.grey03,
+                        fontSize: 12
+                    )
+                ),
+                SizedBox(height: 4),
+                Text(
+                  AppString.topUserSubTitle,
+                  style: TextStyle(fontSize: 18, color: AppColor.black01),
+                ),
+              ],
+            ),
+          ),
+
+          /// Right Icon (Vertically Centered)
+          Util.buildSvgIcon(
+              AppAsset.icArrowRight,
+              0,
+              0,
+              size: 18,
+              selectedColor: AppColor.black02
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget topUser() {
+    return Column(
+      spacing: 16,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        titleUser(),
+        SizedBox(
+          height: 120, // Adjust based on your image size
+          child: Padding(
+              padding: EdgeInsets.only(left: 6),
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: DummyData.users.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6),
+                  child: UserItem(
+                    index: index,
+                    user: DummyData.users[index],
+                    isFirstItem: index == 0, // Pass true for the first item
+                  ),
+                );
+              },
+            ),
+          )
+        )
+
+      ],
     );
   }
 }

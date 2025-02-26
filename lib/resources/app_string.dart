@@ -17,6 +17,7 @@ class AppString {
   static const String category = "카테고리";
   static const String community = "커뮤니티";
   static const String profile = "마이페이지";
+  static const String name = "Name";
 
   // top 1 product
   static const String top1Title = "LG전자 스탠바이미 27ART10AKPL (스탠";

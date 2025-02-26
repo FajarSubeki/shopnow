@@ -15,6 +15,16 @@ class AppAsset {
   static const String imgReview1 = "${rootImage}review_1.png";
   static const String imgReview2 = "${rootImage}review_2.png";
   static const String imgReview3 = "${rootImage}review_3.png";
+  static const String user1 = "${rootImage}user_1.png";
+  static const String user2 = "${rootImage}user_2.png";
+  static const String user3 = "${rootImage}user_3.png";
+  static const String user4 = "${rootImage}user_4.png";
+  static const String user5 = "${rootImage}user_5.png";
+  static const String user6 = "${rootImage}user_6.png";
+  static const String user7 = "${rootImage}user_7.png";
+  static const String user8 = "${rootImage}user_8.png";
+  static const String user9 = "${rootImage}user_9.png";
+  static const String user10 = "${rootImage}user_10.png";
 
   // icons
   static const String icSearch = "${rootIcon}ic_search.svg";

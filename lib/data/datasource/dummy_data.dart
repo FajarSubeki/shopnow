@@ -1,3 +1,4 @@
+import 'package:shopnow/data/models/user.dart';
 import 'package:shopnow/resources/app_asset.dart';
 import 'package:shopnow/resources/app_string.dart';
 
@@ -39,6 +40,19 @@ class DummyData {
       category1: AppString.top3Category1,
       category2: AppString.top3Category2,
     ),
+  ];
+
+  static List<User> users = [
+    User(image: AppAsset.user1, title: AppString.name),
+    User(image: AppAsset.user2, title: AppString.name),
+    User(image: AppAsset.user3, title: AppString.name),
+    User(image: AppAsset.user4, title: AppString.name),
+    User(image: AppAsset.user5, title: AppString.name),
+    User(image: AppAsset.user6, title: AppString.name),
+    User(image: AppAsset.user7, title: AppString.name),
+    User(image: AppAsset.user8, title: AppString.name),
+    User(image: AppAsset.user9, title: AppString.name),
+    User(image: AppAsset.user10, title: AppString.name),
   ];
 
 
