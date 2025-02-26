@@ -18,5 +18,13 @@ class AppAsset {
 
   // icons
   static const String icSearch = "${rootIcon}ic_search.svg";
+  static const String icHome = "${rootIcon}ic_home.svg";
+  static const String icCategory = "${rootIcon}ic_category.svg";
+  static const String icCommunity = "${rootIcon}ic_category.svg";
+  static const String icProfile = "${rootIcon}ic_profile.svg";
+  static const String icArrowRight = "${rootIcon}ic_arrow_right.svg";
+  static const String icTop1 = "${rootIcon}ic_top_1.svg";
+  static const String icTop2 = "${rootIcon}ic_top_2.svg";
+  static const String icTop3 = "${rootIcon}ic_top_3.svg";
 
 }
