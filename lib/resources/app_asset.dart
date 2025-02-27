@@ -25,6 +25,12 @@ class AppAsset {
   static const String user8 = "${rootImage}user_8.png";
   static const String user9 = "${rootImage}user_9.png";
   static const String user10 = "${rootImage}user_10.png";
+  static const String imgRyzen = "${rootImage}img_ryzen.png";
+  static const String imgStar = "${rootImage}img_star.png";
+  static const String user1NoBorder = "${rootImage}user1_noborder.png";
+  static const String commentPick1 = "${rootImage}comment_pict_1.png";
+  static const String commentPick2 = "${rootImage}comment_pict_2.png";
+  static const String commentPick3 = "${rootImage}comment_pict_3.png";
 
   // icons
   static const String icSearch = "${rootIcon}ic_search.svg";
@@ -36,5 +42,11 @@ class AppAsset {
   static const String icTop1 = "${rootIcon}ic_top_1.svg";
   static const String icTop2 = "${rootIcon}ic_top_2.svg";
   static const String icTop3 = "${rootIcon}ic_top_3.svg";
+  static const String icArrow = "${rootIcon}ic_arrow.svg";
+  static const String icArrowBack = "${rootIcon}ic_arrow_back.svg";
+  static const String icKing = "${rootIcon}ic_king.svg";
+  static const String icSave = "${rootIcon}ic_save.svg";
+  static const String icComment = "${rootIcon}ic_comment.svg";
+  static const String icComment2 = "${rootIcon}ic_chat.svg";
 
 }

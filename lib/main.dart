@@ -38,9 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     HomePage(),
-    HomePage(),
-    // HomePage(),
-    // HomePage(),
+    Text("Category"),
+    Text("Comunity"),
+    Text("Profile"),
   ];
 
   void _onTabTapped(int index) {
@@ -130,32 +130,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   label: AppString.category,
                 ),
-                // BottomNavigationBarItem(
-                //   icon: Padding(
-                //     padding: EdgeInsets.only(top: 8), // Adds space above icon
-                //     child: Util.buildSvgIcon(
-                //       AppAsset.icCommunity,
-                //       2,
-                //       _currentIndex,
-                //       selectedColor: AppColor.grey05,
-                //       unselectedColor: AppColor.grey06,
-                //     ),
-                //   ),
-                //   label: AppString.community,
-                // ),
-                // BottomNavigationBarItem(
-                //   icon: Padding(
-                //     padding: EdgeInsets.only(top: 8), // Adds space above icon
-                //     child: Util.buildSvgIcon(
-                //       AppAsset.icProfile,
-                //       3,
-                //       _currentIndex,
-                //       selectedColor: AppColor.grey05,
-                //       unselectedColor: AppColor.grey06,
-                //     ),
-                //   ),
-                //   label: AppString.profile,
-                // ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(top: 8), // Adds space above icon
+                    child: Util.buildSvgIcon(
+                      AppAsset.icCommunity,
+                      2,
+                      _currentIndex,
+                      selectedColor: AppColor.grey05,
+                      unselectedColor: AppColor.grey06,
+                    ),
+                  ),
+                  label: AppString.community,
+                ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(top: 8), // Adds space above icon
+                    child: Util.buildSvgIcon(
+                      AppAsset.icProfile,
+                      3,
+                      _currentIndex,
+                      selectedColor: AppColor.grey05,
+                      unselectedColor: AppColor.grey06,
+                    ),
+                  ),
+                  label: AppString.profile,
+                ),
               ],
             ),
           ),

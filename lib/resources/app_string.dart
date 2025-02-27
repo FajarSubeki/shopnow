@@ -50,6 +50,25 @@ class AppString {
   static const String topUserTitle = "골드 계급 사용자들이예요";
   static const String topUserSubTitle = "베스트 리뷰어 🏆 Top10";
 
+  // detail
+  static const String detailTitle = "랭킹 1위";
+  static const String detailSubtitle = "베스트 리뷰어";
+  static const String goldType = "골드";
+  static const String descUser = "조립컴 업체를 운영하며 리뷰를 작성합니다.";
+  static const String latest = "최신순";
+  static const String review = "작성한 리뷰";
+  static const String countReview = "총 35개";
+  static const String amdTitle = "AMD 라이젠 5 5600X 버미어";
+  static const String amdDesc = "정품 멀티팩";
+  static const String ratingProduct = "4.07";
+  static const String dateReview = "2022.12.09";
+  static const String review01 = "“가격 저렴해요”";
+  static const String review02 = "“CPU온도 고온”";
+  static const String review03 = "“서멀작업 가능해요”";
+  static const String review04 = "“게임 잘 돌아가요”";
+  static const String comment01 = "멀티 작업도 잘 되고 꽤 괜찮습니다. 저희 회사 고객님들에게도 추천 가능한 제품인 듯 합니다.";
+  static const String comment02 = "3600에서 바꾸니 체감이 살짝 되네요. 버라이어티한 느낌 까지는 아닙니다.";
+  static const String leaveComment = "댓글 달기..";
 
 
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopnow/data/datasource/dummy_data.dart';
+import 'package:shopnow/presentation/components/bordered_text.dart';
 import 'package:shopnow/presentation/components/gradient_text_field.dart';
 import 'package:shopnow/presentation/components/image_slider.dart';
 import 'package:shopnow/presentation/components/product_item.dart';
@@ -33,6 +34,7 @@ class _HomePageState extends State<HomePage> {
               bannerSlider(),
               topProduct(),
               topUser(),
+              footerLogo()
             ],
           ),
         ),
@@ -182,4 +184,96 @@ class _HomePageState extends State<HomePage> {
       ],
     );
   }
+
+  Widget footerLogo() {
+    return Container(
+      margin: EdgeInsets.only(left: 16, right: 16, bottom: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 16,
+        children: [
+          Text(
+            AppString.logoInc,
+            style: textStyle.copyWith(
+              fontSize: 15,
+              color: AppColor.grey02,
+              fontWeight: medium
+            ),
+          ),
+          Wrap(
+            spacing: 21, // Adjust space between items
+            runSpacing: 5, // Space between lines if wrapped
+            alignment: WrapAlignment.center,
+            children: [
+              textItem(AppString.aboutMe),
+              divider(),
+              textItem(AppString.career),
+              divider(),
+              textItem(AppString.blog),
+              divider(),
+              textItem(AppString.reviewCopy),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                spacing: 6,
+                children: [
+                  Util.buildSvgIcon(
+                      AppAsset.icArrow,
+                      0,
+                      0,
+                      size: 14,
+                      selectedColor: AppColor.grey10
+                  ),
+                  Text(
+                    AppString.reviewLogo,
+                    style: textStyle.copyWith(fontSize: 13, color: AppColor.grey02),
+                  )
+                ],
+              ),
+              BorderedText(
+                text: AppString.korea,
+                borderColor: Colors.grey,
+                borderWidth: 1.0,
+                borderRadius: 10.0,
+                textStyle: textStyle.copyWith(
+                  color: AppColor.grey02,
+                  fontSize: 13
+                ),
+                icon: Icons.arrow_drop_down_outlined, // Custom arrow icon
+                iconColor: AppColor.grey02,
+                iconSize: 18.0,
+              )
+            ],
+          ),
+          Divider(
+            color: AppColor.grey06, // Line color
+            thickness: 1, // Line thickness
+            height: 1, // Adjust spacing if needed
+          ),
+          Text(
+            AppString.copyright,
+            style: textStyle.copyWith(fontSize: 14, color: AppColor.grey02),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget textItem(String text) {
+    return Text(
+      text,
+      style: textStyle.copyWith(fontSize: 14, color: AppColor.grey02),
+    );
+  }
+
+  Widget divider() {
+    return Text(
+      "|",
+      style: textStyle.copyWith(fontSize: 10, color: AppColor.grey03),
+    );
+  }
+
 }
