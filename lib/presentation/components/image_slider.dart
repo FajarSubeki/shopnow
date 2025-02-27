@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shopnow/resources/app_asset.dart';
+import 'package:shopnow/resources/app_color.dart';
 
 class ImageSlider extends StatefulWidget {
   @override
@@ -44,22 +45,26 @@ class _ImageSliderState extends State<ImageSlider> {
         ),
         Positioned(
           bottom: 10,
+          left: 0,
+          right: 0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: imageList.asMap().entries.map((entry) {
-              return Container(
-                width: _currentIndex == entry.key ? 12.0 : 8.0,
-                height: _currentIndex == entry.key ? 12.0 : 8.0,
+              bool isActive = _currentIndex == entry.key;
+              return AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                width: isActive ? 18.0 : 8.0, // Rectangle width for active, circle for inactive
+                height: 8.0, // Keep the same height for both
                 margin: EdgeInsets.symmetric(horizontal: 4.0),
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: _currentIndex == entry.key ? Colors.white : Colors.grey,
-                  border: Border.all(color: Colors.black.withOpacity(0.5)), // Optional border
+                  borderRadius: BorderRadius.circular(isActive ? 4.0 : 50.0), // Rounded corners for rectangle
+                  color: isActive ? Colors.white : AppColor.white02,
                 ),
               );
             }).toList(),
           ),
         ),
+
       ],
     );
   }
