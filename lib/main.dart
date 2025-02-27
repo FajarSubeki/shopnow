@@ -38,9 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     HomePage(),
-    Text("Category"),
-    Text("Comunity"),
-    Text("Profile"),
+    Center(
+      child: Text(AppString.category),
+    ),
+    Center(
+      child: Text(AppString.community),
+    ),
+    Center(
+      child: Text(AppString.profile),
+    ),
   ];
 
   void _onTabTapped(int index) {
@@ -57,9 +63,13 @@ class _HomeScreenState extends State<HomeScreen> {
         statusBarIconBrightness: Brightness.light, // White icons
       ),
       child: Scaffold(
-        body: _screens[_currentIndex],
+        body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [],
+          body: _screens[_currentIndex], // Your content
+        ),
         appBar: AppBar(
-            title: Text(
+          backgroundColor: AppColor.white,
+          title: Text(
             AppString.logo, style: textStyle.copyWith(
             color: AppColor.primary,
             fontWeight: bold,
@@ -92,10 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
             ),
             child: BottomNavigationBar(
+              backgroundColor: AppColor.white,
               currentIndex: _currentIndex,
               onTap: _onTabTapped,
               type: BottomNavigationBarType.fixed,
@@ -163,4 +174,5 @@ class _HomeScreenState extends State<HomeScreen> {
       )
     );
   }
+
 }

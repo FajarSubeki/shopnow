@@ -8,7 +8,7 @@ import 'package:shopnow/utils/util.dart';
 class ProductItem extends StatelessWidget {
   final Product product;
 
-  const ProductItem({Key? key, required this.product}) : super(key: key);
+  const ProductItem({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,9 @@ class ProductItem extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Container(
-                width: 110,
+                width: 115,
                 padding: EdgeInsets.only(left: 8, right: 8, top: 8),
-                height: 110,
+                height: 115,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
@@ -51,12 +51,11 @@ class ProductItem extends StatelessWidget {
                     Positioned(
                       left: 0, // Aligns the icon to the left
                       top: -2,
-                      child: Util.buildSvgIcon(
+                      child: Image.asset(
                         product.iconTop,
-                        0,
-                        0,
-                        size: 18,
-                        selectedColor: AppColor.black02,
+                        width: 20,
+                        height: 20,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ],
@@ -67,7 +66,6 @@ class ProductItem extends StatelessWidget {
           ),
 
           SizedBox(width: 12),
-
           /// Product Details
           Expanded(
             child: Column(
@@ -76,18 +74,18 @@ class ProductItem extends StatelessWidget {
                 Text(
                   product.title,
                   style: textStyle.copyWith(
-                      fontSize: 14,
+                      fontSize: 15,
                       color: AppColor.black01,
                       fontWeight: bold
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: 3),
                 Text(
                   product.description1,
                   style: textStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 13,
                       color: AppColor.black02,
                       fontWeight: medium
                   ),
@@ -97,7 +95,7 @@ class ProductItem extends StatelessWidget {
                 Text(
                   product.description2,
                   style: textStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 13,
                       color: AppColor.black02,
                       fontWeight: medium
                   ),

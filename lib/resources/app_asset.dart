@@ -31,17 +31,17 @@ class AppAsset {
   static const String commentPick1 = "${rootImage}comment_pict_1.png";
   static const String commentPick2 = "${rootImage}comment_pict_2.png";
   static const String commentPick3 = "${rootImage}comment_pict_3.png";
+  static const String icTop1 = "${rootImage}ic_top1.png";
+  static const String icTop2 = "${rootImage}ic_top2.png";
+  static const String icTop3 = "${rootImage}ic_top3.png";
 
   // icons
   static const String icSearch = "${rootIcon}ic_search.svg";
   static const String icHome = "${rootIcon}ic_home.svg";
   static const String icCategory = "${rootIcon}ic_category.svg";
-  static const String icCommunity = "${rootIcon}ic_category.svg";
+  static const String icCommunity = "${rootIcon}ic_community.svg";
   static const String icProfile = "${rootIcon}ic_profile.svg";
   static const String icArrowRight = "${rootIcon}ic_arrow_right.svg";
-  static const String icTop1 = "${rootIcon}ic_top_1.svg";
-  static const String icTop2 = "${rootIcon}ic_top_2.svg";
-  static const String icTop3 = "${rootIcon}ic_top_3.svg";
   static const String icArrow = "${rootIcon}ic_arrow.svg";
   static const String icArrowBack = "${rootIcon}ic_arrow_back.svg";
   static const String icKing = "${rootIcon}ic_king.svg";

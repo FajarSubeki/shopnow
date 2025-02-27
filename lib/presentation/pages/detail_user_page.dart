@@ -11,8 +11,9 @@ import 'package:shopnow/utils/util.dart';
 class DetailUserPage extends StatefulWidget {
 
   final User user;
+  final int index;
 
-  const DetailUserPage({super.key, required this.user});
+  const DetailUserPage({super.key, required this.user, required this.index});
 
   @override
   State<DetailUserPage> createState() => _DetailUserPageState();
@@ -21,7 +22,7 @@ class DetailUserPage extends StatefulWidget {
 class _DetailUserPageState extends State<DetailUserPage> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
+    return AnnotatedRegion<SystemUiOverlayStyle>  (
         value: SystemUiOverlayStyle(
         statusBarColor: Colors.black, // Black background
         statusBarIconBrightness: Brightness.light, // White icons
@@ -110,7 +111,7 @@ class _DetailUserPageState extends State<DetailUserPage> {
                 ),
               ),
               Text(
-                user.title, // Second Label
+                '${user.title}${(widget.index + 1).toString().padLeft(2, '0')}',
                 style: textStyle.copyWith(
                     color: AppColor.black01,
                     fontSize: 20,
@@ -338,7 +339,7 @@ class _DetailUserPageState extends State<DetailUserPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        user.title,
+                        '${user.title}${(widget.index + 1).toString().padLeft(2, '0')}',
                         style: textStyle.copyWith(
                           fontSize: 14,
                           color: AppColor.black01,
@@ -406,14 +407,14 @@ class _DetailUserPageState extends State<DetailUserPage> {
               height: 1,
             ),
             Row(
-              spacing: 4,
+              spacing: 7,
               children: [
                 Util.buildSvgIcon(
-                    AppAsset.icComment, 0, 0, size: 26, selectedColor: AppColor.grey01
+                    AppAsset.icComment2, 0, 0, size: 20, selectedColor: AppColor.grey01
                 ),
                 Text(
                   AppString.leaveComment,
-                  style: textStyle.copyWith(fontSize: 12, color: AppColor.grey03, fontWeight: medium),
+                  style: textStyle.copyWith(fontSize: 14, color: AppColor.grey03, fontWeight: medium),
                 )
               ],
             )

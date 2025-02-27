@@ -23,11 +23,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.white02,
       body: SafeArea(
-        child: SingleChildScrollView( // Ensures the whole page scrolls
+        child: SingleChildScrollView(
           physics: ClampingScrollPhysics(),
           child: Column(
-            spacing: 30,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               gradientTextField(),
@@ -43,13 +43,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget gradientTextField() {
-    return Padding(
-      padding: EdgeInsets.only(top: 26, left: 18, right: 18),
-        child: GradientTextField(
-        hintText: AppString.search,
-        icon: Icons.search,
-        controller: TextEditingController(),
-      ),
+    return Container(
+      padding: EdgeInsets.only(bottom: 30),
+      color: AppColor.white,
+        child: Padding(
+          padding: EdgeInsets.only(top: 26, left: 18, right: 18),
+          child: GradientTextField(
+            hintText: AppString.search,
+            icon: Icons.search,
+            controller: TextEditingController(),
+          ),
+        ),
     );
   }
 
@@ -58,19 +62,23 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget topProduct() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        titleIcon(),
-        ListView.builder(
-          shrinkWrap: true, // ✅ Important: Makes ListView take only needed space
-          physics: NeverScrollableScrollPhysics(), // ✅ Disable inner scrolling
-          itemCount: DummyData.products.length,
-          itemBuilder: (context, index) {
-            return ProductItem(product: DummyData.products[index]);
-          },
-        ),
-      ],
+    return Container(
+      padding: EdgeInsets.only(top: 30, left: 6, right: 6),
+      color: AppColor.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          titleIcon(),
+          ListView.builder(
+            shrinkWrap: true, // ✅ Important: Makes ListView take only needed space
+            physics: NeverScrollableScrollPhysics(), // ✅ Disable inner scrolling
+            itemCount: DummyData.products.length,
+            itemBuilder: (context, index) {
+              return ProductItem(product: DummyData.products[index]);
+            },
+          ),
+        ],
+      ),
     );
   }
 
@@ -116,7 +124,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget titleUser() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      color: AppColor.white,
+      margin: EdgeInsets.only(top: 24),
+      padding: EdgeInsets.only(top: 24, bottom: 16, left: 16, right: 16),
       child: Row(
         children: [
           /// Left Labels
@@ -140,54 +150,50 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-
-          /// Right Icon (Vertically Centered)
-          Util.buildSvgIcon(
-              AppAsset.icArrowRight,
-              0,
-              0,
-              size: 18,
-              selectedColor: AppColor.black02
-          ),
         ],
       ),
     );
   }
 
   Widget topUser() {
-    return Column(
-      spacing: 16,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        titleUser(),
-        SizedBox(
-          height: 120, // Adjust based on your image size
-          child: Padding(
-              padding: EdgeInsets.only(left: 6),
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: DummyData.users.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6),
-                  child: UserItem(
-                    index: index,
-                    user: DummyData.users[index],
-                    isFirstItem: index == 0, // Pass true for the first item
-                  ),
-                );
-              },
-            ),
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          titleUser(),
+          SizedBox(
+              height: 140, // Adjust based on your image size
+              child: Padding(
+                padding: EdgeInsets.only(),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: DummyData.users.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      color: AppColor.white,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6),
+                        child: UserItem(
+                          index: index,
+                          user: DummyData.users[index],
+                          isFirstItem: index == 0, // Pass true for the first item
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
           )
-        )
 
-      ],
+        ],
+      ),
     );
   }
 
   Widget footerLogo() {
     return Container(
-      margin: EdgeInsets.only(left: 16, right: 16, bottom: 24),
+      margin: EdgeInsets.only(top: 22, left: 16, right: 16, bottom: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 16,
@@ -200,19 +206,26 @@ class _HomePageState extends State<HomePage> {
               fontWeight: medium
             ),
           ),
-          Wrap(
-            spacing: 21, // Adjust space between items
-            runSpacing: 5, // Space between lines if wrapped
-            alignment: WrapAlignment.center,
-            children: [
-              textItem(AppString.aboutMe),
-              divider(),
-              textItem(AppString.career),
-              divider(),
-              textItem(AppString.blog),
-              divider(),
-              textItem(AppString.reviewCopy),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+            child: Row(
+              children: [
+                Wrap(
+                  spacing: 20, // Adjust space between items
+                  runSpacing: 5, // Space between lines if wrapped
+                  alignment: WrapAlignment.center,
+                  children: [
+                    textItem(AppString.aboutMe),
+                    divider(),
+                    textItem(AppString.career),
+                    divider(),
+                    textItem(AppString.blog),
+                    divider(),
+                    textItem(AppString.reviewCopy),
+                  ],
+                ),
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
